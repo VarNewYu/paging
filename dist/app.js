@@ -1,0 +1,1 @@
+angular.module("app",[]).controller("appCtrl",["$scope",function(a){a.dataList=[];for(var t=0;t<25;t++){var e={};e.id=t,a.dataList.push(e)}a.pageSize=10,a.curPage=0,a.pageCount=Math.ceil(a.dataList.length/a.pageSize)-1}]);

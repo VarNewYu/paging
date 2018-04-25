@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>分页</title>
+</head>
+<body ng-controller="appCtrl">
+	
+	<ul ng-repeat="data in dataList | pageStartFrom: curPage * pageSize | limitTo:pageSize">
+		<li ng-bind="data.id"></li>
+	</ul>
+	<div>
+		<button ng-click="curPage = 0" ng-disabled="curPage == 0">首页</button>
+		<button ng-click="curPage = curPage - 1" ng-disabled="curPage <=0 ">上一页</button>
+		<label for="">当前第{{curPage + 1}}</label>
+		<button ng-click="curPage = curPage + 1" ng-disabled="curPage >= pageCount">下一页</button>
+		<button ng-click="curPage = pageCount" ng-disabled="curPage == pageCount">尾页</button>
+	</div>
+
+	<script src="libs/angular.min.js"></script>
+	<script src="dist/app.js"></script>
+	<script src="dist/filter.js"></script>
+</body>
+</html>

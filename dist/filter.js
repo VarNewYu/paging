@@ -1,0 +1,1 @@
+angular.module("app").filter("pageStartFrom",[function(){return function(r,n){return n=+n,r.slice(n)}}]);
